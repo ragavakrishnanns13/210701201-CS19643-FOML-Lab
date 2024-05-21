@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CANCER DIAGNOSING APPLICATION</title>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    background-image: url('/static/images/Designer.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 50px;
+    border: 5px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 800px; /* Set the width of the form */
+    max-width: 90%; /* Set a maximum width to ensure responsiveness */
+}
+
+form {
+    width: 100%; /* Allow form to expand within container */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #04cdec;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2200ff;
+}
+</style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <h2 style="text-align: center;">CANCER DIAGNOSING APPLICATION</h2>
+            <label for="name">Patient Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="age">Patient Age:</label>
+            <input type="text" id="age" name="age" required>
+            
+            <label for="csv">Upload Test Report(.csv supported):</label>
+            <input type="file" id="csv" name="csv" accept=".csv" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
